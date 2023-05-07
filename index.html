@@ -5,24 +5,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aristotelis S.</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <header>
-  <nav class="navbar is-transparent" style="margin-left: 50px; margin-right: 50px;">
+  <nav class="navbar is-transparent"
+    style="margin-left: 50px; margin-right: 50px; padding-top: 4px; padding-bottom: 4px;">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io" style="font-size: larger; font-weight: 500;">
+      <a class="navbar-item" href="./index.html" style="font-size: larger; font-weight: 500;">
         <i class="fa-solid fa-terminal" style="margin-right: 8px;"></i>
-         Aristotelis.
+        Aristotelis.
       </a>
     </div>
 
     <div id="navbar-menu" class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item" href="https://bulma.io/">
+        <a class="navbar-item" href="./index.html">
           Home
         </a>
-        <a class="navbar-item" href="./skills.html">
+        <!-- <a class="navbar-item" href="./skills.html">
           Skills
         </a>
         <a class="navbar-item" href="./experience.html">
@@ -30,12 +34,12 @@
         </a>
         <a class="navbar-item" href="./education.html">
           Education
-        </a>
+        </a> -->
         <a class="navbar-item" href="./contact.html">
-          <button class="button" style="background-color: hsl(153, 53%, 53%);">
-            Contact me!
+          <button class="button is-rounded" style="background-color: hsl(246, 74%, 63%); color: antiquewhite;">
+            Let's Chat
           </button>
-          
+
         </a>
       </div>
     </div>
@@ -43,27 +47,101 @@
 </header>
 
 <body>
-  <section class="hero is-large is-link">
-    <div class="hero-body has-text-centered">
-      <p class="title">
-        Hi Everyone,
-      </p>
-      <p class="subtitle">
-        I am Aristotelis!
-      </p>
-      <p class="subtitle">
-        The page is currently Under Construction, so just bear with me! <i class="fa-solid fa-face-smile"></i>
+  <section class="hero">
+    <div class="hero-body" style="margin-left: 4%; margin-right: 4%;">
+      <div class="columns is-flex is-vcentered">
+        <!-- Text column -->
+        <div class="column">
+          <p class="title">
+            Welcome Everyone,
+          </p>
+          <p class="subtitle">$ whoami: My name is Aristotelis. Currently, I am working as a Solution Engineer for
+            Pfizer, at the Global Center of Digital Innovations, located in Thessaloniki, Greece.</p>
+          <p class="subtitle"></p>
 
-      </p>
-    </div>
-  </section>
-  <section class="hero is-large is-link">
-    <div class="hero-body">
-      <div class="columns">
-        <div class="column" >First column</div>
+          <div class="buttons">
+            <button class="button is-rounded"><a href="https://www.linkedin.com/in/aristotelissym/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></i></button>
+            <button class="button is-rounded"><a href="https://www.linkedin.com/in/aristotelissym/" target="_blank"><i class="fa-brands fa-github"></i></a></button>
+          </div>
+        </div>
+        <!-- Image column -->
+        <div class="column is-centered">
+          <figure class="image" style="scale: 0.5;">
+            <img src="./assets/eportolio-mascot-2.png">
+          </figure>
+        </div>
       </div>
     </div>
   </section>
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="title has-text-centered">Fields of Interest</div>
+      <div class="columns is-centered">
+        <!-- Box 1 - System Architecting -->
+        <div class="column">
+          <div class="box has-text-centered" style="margin: 8%;">
+            <figure class="image is-128x128 is-inline-block">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+            </figure>
+            <div class="title is-4" style="color:black">Solution Architecting</div>
+            <div class="content">
+              <p>My goal is to build Safe, Secure and Scalable systems, offering High Availability and Performance, with
+                the best possible Cost Optimization. </p>
+            </div>
+          </div>
+        </div>
+        <!-- Box 2 - Cloud Computing -->
+        <div class="column">
+          <div class="box has-text-centered" style="margin: 8%;">
+            <figure class="image is-128x128 is-inline-block">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+            </figure>
+            <div class="title is-4" style="color:black">Cloud Computing</div>
+            <div class="content">
+              <p>With Cloud Computing, anyone has the ability to create scalable and fault-tolerant systems, that can be
+                configured in a way that will be almost all the time up-and-running. Also, Hubrid Systems can be
+                combined to utilize both Cloud and on-Prem pros.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Box 3 - DevOps Engineering -->
+        <div class="column">
+          <div class="box has-text-centered" style="margin: 8%;">
+            <figure class="image is-128x128 is-inline-block">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+            </figure>
+            <div class="title is-4" style="color:black">DevOps Engineering</div>
+            <div class="content">
+              <p>Mostly working on the Operations Processes, I enjoy creating and maintaining the infrastructure,
+                building the logic behind the CI/CD pipelines, and workflows.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="hero is-halfheight is-centered ">
+    <!-- <div class="container ">
+      <div class="box has-text-centered">
+        <div class="title">Title</div>
+        <div class="content">If you have any topic you would like to discuss please reach out to me!</div>
+        <div class="button">
+          Button
+        </div>
+      </div> -->
+    </div>
+
+  </div>
 </body>
+<footer class="footer" style="background-color: #20262E; color: aliceblue;">
+  <div class="content has-text-centered">
+    <p>
+      This page was build with <i class="fa-brands fa-html5" style="color: #ff6f00;"></i>, <i class="fa-brands fa-css3"
+        style="color: #1162ee;"></i>, <i class="fa-brands fa-js" style="color: #dfeb00;"></i> and <i
+        class="fa-sharp fa-solid fa-heart" style="color: #f72237;"></i>. | Copyright © 2023 - Aristotelis Symeonidis -
+      All Rights Reserved.
+    </p>
+  </div>
+</footer>
 
 </html>
