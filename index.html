@@ -10,40 +10,11 @@
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./styles/styles.css">
+  <script async src="header.js"></script>
+  <script async src="footer.js"></script>
 </head>
-<header>
-  <nav class="navbar is-transparent"
-    style="margin-left: 50px; margin-right: 50px; padding-top: 4px; padding-bottom: 4px;">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="./index.html" style="font-size: larger; font-weight: 500;">
-        <i class="fa-solid fa-terminal" style="margin-right: 8px;"></i>
-        Aristotelis.
-      </a>
-    </div>
+<header id="app-header">
 
-    <div id="navbar-menu" class="navbar-menu">
-      <div class="navbar-end">
-        <a class="navbar-item" href="./index.html">
-          Home
-        </a>
-        <!-- <a class="navbar-item" href="./skills.html">
-          Skills
-        </a>
-        <a class="navbar-item" href="./experience.html">
-          Experience
-        </a>
-        <a class="navbar-item" href="./education.html">
-          Education
-        </a> -->
-        <a class="navbar-item" href="mailto:arisymeon97@gmail.com">
-          <button class="button is-rounded" style="background-color: hsl(246, 75%, 52%); color: antiquewhite;">
-            Let's Chat
-          </button>
-
-        </a>
-      </div>
-    </div>
-  </nav>
 </header>
 
 <body>
@@ -55,13 +26,18 @@
           <p class="title">
             Welcome Everyone,
           </p>
-          <p class="subtitle">$ whoami: My name is Aristotelis. Currently, I am working as a Solution Engineer for
+          <p class="subtitle">My name is Aristotelis. Currently, I am working as a Solution Engineer for
             Pfizer, at the Global Center of Digital Innovations, located in Thessaloniki, Greece.</p>
           <p class="subtitle"></p>
 
           <div class="buttons">
-            <button class="button is-rounded"><a href="https://www.linkedin.com/in/aristotelissym/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></i></button>
-            <button class="button is-rounded"><a href="https://github.com/aristotelissym" target="_blank"><i class="fa-brands fa-github"></i></a></button>
+            <button id="linkedin-btn" class="button is-rounded"><a id="btn-a"
+                href="https://www.linkedin.com/in/aristotelissym/" target="_blank"><i
+                  class="fa-brands fa-linkedin"></i></a></i></button>
+            <button id="github-btn" class="button is-rounded"><a id="btn-a" href="https://github.com/aristotelissym"
+                target="_blank"><i class="fa-brands fa-github"></i></a></button>
+            <button id="short-bio" class="button is-rounded"><a id="btn-a" href="./assets/Aristotle-Symeonidis-CV.pdf"
+                target="_blank" download>Short Bio</a></button>
           </div>
         </div>
         <!-- Image column -->
@@ -129,19 +105,11 @@
           Button
         </div>
       </div> -->
-    </div>
+  </div>
 
   </div>
 </body>
-<footer class="footer" style="background-color: #20262E; color: aliceblue;">
-  <div class="content has-text-centered">
-    <p>
-      This page was build with <i class="fa-brands fa-html5" style="color: #ff6f00;"></i>, <i class="fa-brands fa-css3"
-        style="color: #1162ee;"></i>, <i class="fa-brands fa-js" style="color: #dfeb00;"></i> and <i
-        class="fa-sharp fa-solid fa-heart" style="color: #f72237;"></i>. | Copyright © 2023 - Aristotelis Symeonidis -
-      All Rights Reserved.
-    </p>
-  </div>
+<footer id="app-footer" class="footer">
 </footer>
 
 </html>
