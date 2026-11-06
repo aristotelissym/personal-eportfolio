@@ -1,29 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <script async src="header.js"></script>
-        <script async src="footer.js"></script>
-        <link rel="stylesheet" href="/styles/styles.css">
-    
-    </head>
-    <header class="" id="app-header"></header>
-<body>
-    <body>
-        <section class="hero is-info">
-            <div class="hero-body">
-              <p class="title">
-                Blog page
-              </p>
-              <p class="subtitle">
-                Under construction
-              </p>
-            </div>
-          </section>
-    </body>
-</body>
-<footer class="footer" id="app-footer"></footer>
+  <head>
+    <!-- @include head -->
+    <title>Blog · Aristotelis Symeonidis</title>
+    <meta
+      name="description"
+      content="Notes from the pipeline: write-ups on infrastructure, automation and lessons from incidents by Aristotelis Symeonidis."
+    />
+    <script type="module" src="/src/pages/blog.ts"></script>
+  </head>
+  <body data-page="blog">
+    <!-- @include header -->
+
+    <main id="main">
+      <header class="page-header">
+        <div class="container">
+          <p class="eyebrow">06 — blog</p>
+          <h1 class="page-header__title">Notes from the pipeline</h1>
+          <p class="page-header__lead">Write-ups on infrastructure, automation and lessons from incidents.</p>
+        </div>
+      </header>
+
+      <section class="section section--tight" aria-label="Posts">
+        <div class="container">
+          <div class="grid grid--3" id="post-grid"></div>
+        </div>
+      </section>
+
+      <!-- @include contact -->
+    </main>
+
+    <!-- @include footer -->
+  </body>
 </html>

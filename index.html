@@ -1,121 +1,142 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @include head -->
+    <title>Aristotelis Symeonidis · DevOps Engineer</title>
+    <meta
+      name="description"
+      content="Aristotelis Symeonidis, DevOps engineer at T-Digital, Deutsche Telekom IT in Thessaloniki. Kubernetes platforms, cloud migrations and automation."
+    />
+    <script type="module" src="/src/pages/home.ts"></script>
+  </head>
+  <body data-page="home">
+    <!-- @include header -->
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aristotelis S.</title>
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./styles/styles.css">
-  <script async src="header.js"></script>
-  <script async src="footer.js"></script>
-</head>
-<header id="app-header">
-
-</header>
-
-<body>
-  <!-- Hero Section 1 - Intro -->
-  <section class="hero">
-    <div class="hero-body" style="margin-left: 4%;">
-      <!-- Desktop Columns -->
-      <div class="columns is-flex is-vcentered is-multiline" id="hero-section-1-columns">
-        <!-- Text column -->
-        <div class="column is-6-desktop is-12-mobile has-text-centered-mobile is-centered-mobile">
-          <p class="title">
-            Welcome Everyone,
-          </p>
-          <p class="subtitle">My name is Aristotelis. Currently, I am working as a Solution Engineer for
-            Pfizer, at the Global Center of Digital Innovations, located in Thessaloniki, Greece.</p>
-          <p class="subtitle"></p>
-
-          <div class="buttons">
-            <button id="linkedin-btn" class="button is-rounded"><a id="btn-a"
-                href="https://www.linkedin.com/in/aristotelissym/" target="_blank"><i
-                  class="fa-brands fa-linkedin"></i></a></i></button>
-            <button id="github-btn" class="button is-rounded"><a id="btn-a" href="https://github.com/aristotelissym"
-                target="_blank"><i class="fa-brands fa-github"></i></a></button>
-            <button class="button is-rounded"><a  href="mailto:arisymeon97@gmail.com"
-                target="_blank"><i class="fa-solid fa-envelope" style="color: #245cbc;"></i></a></button>
-
-            <button id="short-bio" class="button is-rounded"><a id="btn-a" href="./assets/Aristotle-Symeonidis-CV.pdf"
-                target="_blank" download>Short Bio</a></button>
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero__grid">
+          <div>
+            <p class="eyebrow">// devops engineer · thessaloniki, greece</p>
+            <h1 class="hero__title">Aristotelis <span class="hl">Symeonidis</span></h1>
+            <p class="hero__lead">
+              I'm a <strong>DevOps engineer</strong> with <strong><span data-years-since="2020-10">6</span> years</strong>
+              in cloud operations. At T-Digital, Deutsche Telekom IT, I run Kubernetes platforms and move enterprise
+              systems to the cloud.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="#contact">Let's talk</a>
+              <a class="btn btn--signal" href="./cv/Aristotelis-Symeonidis-CV.pdf" download>
+                <i class="fa-solid fa-download" aria-hidden="true"></i> Download CV <span class="btn__kbd">PDF</span>
+              </a>
+              <a class="btn" href="https://github.com/aristotelissym" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub ↗
+              </a>
+              <a class="btn" href="https://www.linkedin.com/in/aristotelissym/" target="_blank" rel="noopener">
+                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn ↗
+              </a>
+            </div>
+            <ul class="tag-list hero__creds" aria-label="Certifications">
+              <li class="tag">AWS Solutions Architect – Associate</li>
+              <li class="tag">GCP Cloud Digital Leader</li>
+              <li class="tag">CSPO</li>
+            </ul>
           </div>
-        </div>
-        <!-- Image column -->
-        <div class="column is-6-desktop is-12-mobile is-centered is-half-desktop">
-          <figure class="image" style="scale: 0.5;">
-            <img src="./assets/eportolio-mascot-2.png">
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Hero Section 2 - Fields of Interest -->
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="title has-text-centered">Fields of Interest</div>
-      <div class="columns is-centered">
-        <!-- Box 1 - System Architecting -->
-        <div class="column">
-          <div class="box has-text-centered" style="margin: 8%;">
-            <figure class="image is-128x128 is-inline-block">
-              <img class="is-rounded" src="./assets/eportolio-mascot-1.png">
-            </figure>
-            <div class="title is-4" style="color:black">Solution Architecting</div>
-            <div class="content">
-              <p>My goal is to build Safe, Secure and Scalable systems, offering High Availability and Performance, with
-                the best possible Cost Optimization. </p>
+
+          <div class="terminal">
+            <div class="terminal__bar" aria-hidden="true">
+              <span class="terminal__dot terminal__dot--red"></span>
+              <span class="terminal__dot terminal__dot--amber"></span>
+              <span class="terminal__dot terminal__dot--green"></span>
+              <span class="terminal__title">aristotelis@thessaloniki: ~</span>
+            </div>
+            <div class="terminal__body" data-typewriter>
+              <p class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">whoami</span></p>
+              <p class="term-out term-out--hl">aristotelis-symeonidis · devops engineer</p>
+              <p class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">cat role.yaml</span></p>
+              <p class="term-out"><span class="term-key">company:</span> T-Digital, Deutsche Telekom IT</p>
+              <p class="term-out"><span class="term-key">team:</span>    AWS / System Team, Gigabit Domain</p>
+              <p class="term-out"><span class="term-key">stack:</span>   [kubernetes, rancher, terraform, gitlab-ci, aws, otc]</p>
+              <p class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">uptime</span></p>
+              <p class="term-out"><span data-years-since="2020-10">6</span> years in cloud operations</p>
+              <p class="term-line"><span class="term-prompt">$</span> <span class="term-cursor" aria-hidden="true"></span></p>
             </div>
           </div>
         </div>
-        <!-- Box 2 - Cloud Computing -->
-        <div class="column">
-          <div class="box has-text-centered" style="margin: 8%;">
-            <figure class="image is-128x128 is-inline-block">
-              <img class="is-rounded" src="./assets/cloud-computing-1.png">
-            </figure>
-            <div class="title is-4" style="color:black">Cloud Computing</div>
-            <div class="content">
-              <p>With Cloud Computing, anyone has the ability to create scalable and fault-tolerant systems, that can be
-                configured in a way that will be almost all the time up-and-running. Also, Hubrid Systems can be
-                combined to utilize both Cloud and on-Prem pros.</p>
+      </section>
+
+      <!-- 01 whoami -->
+      <section class="section section--alt" id="about" aria-labelledby="about-title">
+        <div class="container">
+          <p class="eyebrow">01 — whoami</p>
+          <h2 class="section-title" id="about-title"><span class="hash">#</span> About me</h2>
+          <div class="about">
+            <div class="about__text">
+              <p>
+                I keep production systems available, secure and cost-efficient. My path ran from technical lead for
+                production systems at Pfizer's Center for Digital Innovation, through IT operations at Deutsche Telekom
+                IT, to DevOps engineering on Kubernetes and the cloud.
+              </p>
+              <p>
+                I care about system architecture, cloud computing and IoT, and about the unglamorous parts: root-cause
+                analysis, automation that removes toil, and migrations that nobody notices.
+              </p>
+              <dl class="stats">
+                <div class="stat">
+                  <dt class="stat__label">years in cloud operations</dt>
+                  <dd class="stat__value"><span data-years-since="2020-10">6</span></dd>
+                </div>
+                <div class="stat">
+                  <dt class="stat__label">certifications</dt>
+                  <dd class="stat__value" data-cert-count>4</dd>
+                </div>
+                <div class="stat">
+                  <dt class="stat__label">Smart Cities &amp; IoT, in progress</dt>
+                  <dd class="stat__value">M.Sc.</dd>
+                </div>
+              </dl>
+              <div class="slot slot--bio">
+                <b>+ Extend bio</b><span>What drives you, what you're learning now, life outside work.</span>
+              </div>
+            </div>
+            <div class="about__side">
+              <div class="slot slot--photo"><b>+ Add photo</b><span>Square headshot, 480 × 480.</span></div>
+              <article class="card">
+                <h3 class="card__title card__title--flush">Fields of interest</h3>
+                <ul class="tag-list" id="interests"></ul>
+              </article>
+              <article class="card">
+                <h3 class="card__title card__title--flush">How I work</h3>
+                <ul class="tag-list" id="work-style"></ul>
+              </article>
             </div>
           </div>
         </div>
-        <!-- Box 3 - DevOps Engineering -->
-        <div class="column">
-          <div class="box has-text-centered" style="margin: 8%;">
-            <figure class="image is-128x128 is-inline-block">
-              <img class="is-rounded" src="./assets/devops-engineer-1.png">
-            </figure>
-            <div class="title is-4" style="color:black">DevOps Engineering</div>
-            <div class="content">
-              <p>Mostly working on the Operations Processes, I enjoy creating and maintaining the infrastructure,
-                building the logic behind the CI/CD pipelines, and workflows.</p>
+      </section>
+
+      <!-- Onward -->
+      <section class="section">
+        <div class="container">
+          <div class="cta">
+            <div>
+              <p class="eyebrow">$ git log --author="aristotelis" --oneline</p>
+              <h2 class="cta__title">Want the long version?</h2>
+              <p class="muted">
+                <span data-years-since="2020-10">6</span> years keeping production systems available, from pharma to
+                telecom.
+              </p>
+            </div>
+            <div class="btn-row">
+              <a class="btn" href="./experience.html">./experience <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              <a class="btn" href="./projects.html">./projects <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <div class="hero is-halfheight is-centered ">
-    <!-- <div class="container ">
-      <div class="box has-text-centered">
-        <div class="title">Title</div>
-        <div class="content">If you have any topic you would like to discuss please reach out to me!</div>
-        <div class="button">
-          Button
-        </div>
-      </div> -->
-  </div>
+      </section>
 
-  </div>
-</body>
-<footer id="app-footer" class="footer">
-</footer>
+      <!-- @include contact -->
+    </main>
 
+    <!-- @include footer -->
+  </body>
 </html>

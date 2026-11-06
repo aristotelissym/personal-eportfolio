@@ -1,0 +1,91 @@
+@use 'sass:map';
+
+// ---------- Typography ----------
+$font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+$font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+// ---------- Shape & layout ----------
+$radius: 10px;
+$radius-sm: 6px;
+$container: 1120px;
+$header-height: 64px;
+
+$breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+);
+
+@mixin up($bp) {
+  @media (min-width: map.get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+// ---------- Brand palette ----------
+$brand-navy: #0d1a33; // primary dark
+$brand-blue: #8fb4e3; // primary light
+$brand-orange: #ff6a2b; // accent
+
+// Terminal and contact panels: deep navy in both themes.
+$panel-bg: #08122a;
+$panel-bar: #0f1e3b;
+$panel-border: #24375a;
+$panel-text: #dbe5f3;
+$panel-muted: #93a6c3;
+$panel-heading: #ffffff;
+
+// ---------- Colour themes (exposed as CSS custom properties) ----------
+// --accent / --primary are text-safe on the theme's surfaces (>= 4.5:1);
+// --accent-fill / --primary-fill are the raw brand colours for fills, always with navy text on top.
+@mixin theme-dark {
+  color-scheme: dark;
+  --bg: #{$brand-navy};
+  --bg-elev: #10203d;
+  --surface: #132544;
+  --border: #233859;
+  --border-strong: #6280ad;
+  --text: #d9e3f1;
+  --text-muted: #9aabc6;
+  --heading: #f4f7fc;
+  --accent: #{$brand-orange};
+  --accent-strong: #ff8a57;
+  --accent-fill: #{$brand-orange};
+  --accent-fill-hover: #ff8a57;
+  --accent-contrast: #{$brand-navy};
+  --accent-soft: rgb(255 106 43 / 0.12);
+  --primary: #{$brand-blue};
+  --primary-fill: #{$brand-blue};
+  --primary-fill-hover: #a9c6ec;
+  --on-primary: #{$brand-navy};
+  --amber: #fbbf24;
+  --red: #f87171;
+  --grid: rgb(143 180 227 / 0.04);
+  --shadow: 0 18px 40px rgb(3 8 20 / 0.5);
+}
+
+@mixin theme-light {
+  color-scheme: light;
+  --bg: #f3f6fb;
+  --bg-elev: #ffffff;
+  --surface: #ffffff;
+  --border: #d6e1ef;
+  --border-strong: #7890b0;
+  --text: #{$brand-navy};
+  --text-muted: #4b5d7c;
+  --heading: #{$brand-navy};
+  --accent: #c4470f;
+  --accent-strong: #a3390a;
+  --accent-fill: #{$brand-orange};
+  --accent-fill-hover: #ff8a57;
+  --accent-contrast: #{$brand-navy};
+  --accent-soft: rgb(255 106 43 / 0.1);
+  --primary: #2c5b96;
+  --primary-fill: #{$brand-blue};
+  --primary-fill-hover: #a9c6ec;
+  --on-primary: #{$brand-navy};
+  --amber: #9a6700;
+  --red: #b91c1c;
+  --grid: rgb(13 26 51 / 0.05);
+  --shadow: 0 18px 40px rgb(13 26 51 / 0.1);
+}

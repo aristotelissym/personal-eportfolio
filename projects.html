@@ -1,29 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <script async src="header.js"></script>
-        <script async src="footer.js"></script>
-        <link rel="stylesheet" href="./styles/styles.css">
-    
-    </head>
-    <header class="" id="app-header"></header>
-<body>
-    <body>
-        <section class="hero is-info">
-            <div class="hero-body">
-              <p class="title">
-                Project page
-              </p>
-              <p class="subtitle">
-                Under construction
-              </p>
-            </div>
-          </section>
-    </body>
-</body>
-<footer class="footer" id="app-footer"></footer>
+  <head>
+    <!-- @include head -->
+    <title>Projects · Aristotelis Symeonidis</title>
+    <meta
+      name="description"
+      content="Selected work by Aristotelis Symeonidis: Kubernetes platforms, cloud migrations and infrastructure automation."
+    />
+    <script type="module" src="/src/pages/projects.ts"></script>
+  </head>
+  <body data-page="projects">
+    <!-- @include header -->
+
+    <main id="main">
+      <header class="page-header">
+        <div class="container">
+          <p class="eyebrow">05 — projects</p>
+          <h1 class="page-header__title">Selected work</h1>
+          <p class="page-header__lead">
+            Highlights from production. Case studies are on the way. Side projects and code live on
+            <a href="https://github.com/aristotelissym" target="_blank" rel="noopener">GitHub ↗</a>.
+          </p>
+        </div>
+      </header>
+
+      <section class="section section--tight" aria-label="Project list">
+        <div class="container">
+          <div class="filters" id="project-filters" role="group" aria-label="Filter projects by technology"></div>
+          <p class="filters__count muted" id="project-count" aria-live="polite"></p>
+          <div class="grid grid--3" id="project-grid"></div>
+        </div>
+      </section>
+
+      <!-- @include contact -->
+    </main>
+
+    <!-- @include footer -->
+  </body>
 </html>

@@ -1,5 +1,21 @@
 {
+  "name": "personal-eportfolio",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "sass": "^1.108.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6"
+  },
   "dependencies": {
-    "tailwindcss": "^3.3.2"
+    "@fortawesome/fontawesome-free": "^7.3.1"
   }
 }

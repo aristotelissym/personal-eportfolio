@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @include head -->
+    <title>Experience & skills · Aristotelis Symeonidis</title>
+    <meta
+      name="description"
+      content="Work history, toolbox, certificates and education of Aristotelis Symeonidis, DevOps engineer."
+    />
+    <script type="module" src="/src/pages/experience.ts"></script>
+  </head>
+  <body data-page="experience">
+    <!-- @include header -->
+
+    <main id="main">
+      <header class="page-header">
+        <div class="container">
+          <p class="eyebrow">$ git log --author="aristotelis" --oneline</p>
+          <h1 class="page-header__title">Experience &amp; skills</h1>
+          <p class="page-header__lead">
+            <span data-years-since="2020-10">6</span> years keeping production systems available, from pharma to
+            telecom. Most recent commit first.
+          </p>
+          <a class="btn btn--signal" href="./cv/Aristotelis-Symeonidis-CV.pdf" download>
+            <i class="fa-solid fa-download" aria-hidden="true"></i> Download CV <span class="btn__kbd">PDF</span>
+          </a>
+        </div>
+      </header>
+
+      <section class="section section--tight" id="experience" aria-labelledby="timeline-title">
+        <div class="container">
+          <p class="eyebrow">02 — experience</p>
+          <h2 class="section-title" id="timeline-title"><span class="hash">#</span> Where I've worked</h2>
+          <ol class="gitlog" id="timeline"></ol>
+          <details class="earlier">
+            <summary class="earlier__summary">Earlier roles · QA, web development and research, 2016 – 2020</summary>
+            <ol class="gitlog gitlog--earlier" id="timeline-earlier"></ol>
+          </details>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="skills" aria-labelledby="skills-title">
+        <div class="container">
+          <p class="eyebrow">03 — skills</p>
+          <h2 class="section-title" id="skills-title"><span class="hash">#</span> Toolbox</h2>
+          <p class="section-lead">What I reach for, grouped by layer of the stack.</p>
+          <div class="skill-groups" id="skills-grid"></div>
+          <h3 class="subsection-title">how I work</h3>
+          <ul class="tag-list" id="work-style"></ul>
+        </div>
+      </section>
+
+      <section class="section" id="credentials" aria-labelledby="credentials-title">
+        <div class="container">
+          <p class="eyebrow">04 — credentials</p>
+          <h2 class="section-title" id="credentials-title"><span class="hash">#</span> Certificates &amp; education</h2>
+          <div class="grid grid--4" id="certifications"></div>
+          <div class="grid grid--2 education-row" id="education"></div>
+        </div>
+      </section>
+
+      <!-- @include contact -->
+    </main>
+
+    <!-- @include footer -->
+  </body>
+</html>

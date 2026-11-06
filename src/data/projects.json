@@ -1,0 +1,46 @@
+{
+  "$schema": "./projects.schema.json",
+  "projects": [
+    {
+      "kind": "Work · Deutsche Telekom IT",
+      "title": "AI ticket-management platform",
+      "summary": "Infrastructure lead for one of the first regional, custom-tailored AI tools for ticket management.",
+      "tags": ["Kubernetes", "Terraform", "GitLab CI/CD"],
+      "period": "2025 –"
+    },
+    {
+      "kind": "Work · Deutsche Telekom IT",
+      "title": "Multi-tenant B2B marketplace",
+      "summary": "Operating and maintaining a multi-tenant marketplace on Open Telekom Cloud.",
+      "tags": ["OTC", "Kubernetes", "Rancher"],
+      "period": "2025 –"
+    },
+    {
+      "kind": "Work · Deutsche Telekom IT",
+      "title": "Patch management tool",
+      "summary": "A custom tool that automates patching of Linux systems on AWS and Azure.",
+      "tags": ["Ansible", "Bash", "Linux"],
+      "period": "2023 – 2025"
+    },
+    {
+      "kind": "Work · Deutsche Telekom IT",
+      "title": "On-prem → AWS migrations",
+      "summary": "Moving enterprise systems from on-premises infrastructure to AWS.",
+      "tags": ["AWS", "Terraform"],
+      "period": "2023 –"
+    },
+    {
+      "kind": "Side project",
+      "title": "This portfolio",
+      "summary": "A static, multi-page site in HTML, TypeScript and SCSS, built with Vite and deployed to GitHub Pages by GitHub Actions.",
+      "tags": ["TypeScript", "SCSS", "GitHub Actions"],
+      "period": "2023 –",
+      "repository": "https://github.com/aristotelissym/personal-eportfolio",
+      "liveUrl": "https://aristotelissym.github.io/personal-eportfolio/"
+    }
+  ],
+  "slots": [
+    { "action": "+ Add side project", "hint": "Homelab, open-source contribution, IoT build." },
+    { "action": "+ Add project", "hint": "Title, two sentences, tools, link." }
+  ]
+}
