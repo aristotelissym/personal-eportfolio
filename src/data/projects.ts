@@ -12,15 +12,12 @@ export interface Project {
   summary: string;
   tags: string[];
   period: string;
+  /** Drawing revision letter, "A" unless set. */
+  revision: string;
   repository?: { url: string; host: RepositoryHost | null };
   liveUrl?: string;
   caseStudyUrl?: string;
   image?: string;
-}
-
-export interface ProjectSlot {
-  action: string;
-  hint?: string;
 }
 
 const HOSTS: Record<RepositoryHost, true> = { github: true, gitlab: true };
@@ -65,6 +62,7 @@ function parseProject(value: unknown, index: number): Project {
     summary: str(p.summary, `${where}.summary`, true)!,
     tags: p.tags as string[],
     period: str(p.period, `${where}.period`, true)!,
+    revision: parseRevision(p.revision, where),
     repository: repoUrl ? { url: repoUrl, host: detectHost(repoUrl, p.repositoryHost, where) } : undefined,
     liveUrl: str(p.liveUrl, `${where}.liveUrl`, false),
     caseStudyUrl: str(p.caseStudyUrl, `${where}.caseStudyUrl`, false),
@@ -72,13 +70,17 @@ function parseProject(value: unknown, index: number): Project {
   };
 }
 
-function parseSlot(value: unknown, index: number): ProjectSlot {
-  const s = (value ?? {}) as Record<string, unknown>;
-  return { action: str(s.action, `slots[${index}].action`, true)!, hint: str(s.hint, `slots[${index}].hint`, false) };
+function parseRevision(value: unknown, where: string): string {
+  if (value === undefined) return 'A';
+  if (typeof value !== 'string' || !/^[A-Z]$/.test(value)) fail(`${where}.revision`, 'must be one capital letter, e.g. "B"');
+  return value;
 }
 
 const data = raw as { projects?: unknown; slots?: unknown };
 if (!Array.isArray(data.projects)) fail('projects', 'must be an array');
 
 export const projects: Project[] = data.projects.map(parseProject);
-export const projectSlots: ProjectSlot[] = Array.isArray(data.slots) ? data.slots.map(parseSlot) : [];
+/** One line each; shown as hazard-taped work-in-progress slots. */
+export const projectSlots: string[] = Array.isArray(data.slots)
+  ? data.slots.map((s, i) => str(s, `slots[${i}]`, true)!)
+  : [];

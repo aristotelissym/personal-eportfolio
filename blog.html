@@ -2,28 +2,25 @@
 <html lang="en">
   <head>
     <!-- @include head -->
-    <title>Blog · Aristotelis Symeonidis</title>
-    <meta
-      name="description"
-      content="Notes from the pipeline: write-ups on infrastructure, automation and lessons from incidents by Aristotelis Symeonidis."
-    />
-    <script type="module" src="/src/pages/blog.ts"></script>
+    <title>Field notes — Aristotelis Symeonidis</title>
+    <meta name="description" content="Write-ups on infrastructure, automation and lessons from incidents." />
   </head>
-  <body data-page="blog">
+  <body class="as-root" data-page="blog">
     <!-- @include header -->
 
     <main id="main">
-      <header class="page-header">
-        <div class="container">
-          <p class="eyebrow">06 — blog</p>
-          <h1 class="page-header__title">Notes from the pipeline</h1>
-          <p class="page-header__lead">Write-ups on infrastructure, automation and lessons from incidents.</p>
-        </div>
-      </header>
-
-      <section class="section section--tight" aria-label="Posts">
-        <div class="container">
-          <div class="grid grid--3" id="post-grid"></div>
+      <!-- 06 Notes -->
+      <section class="as-section" id="blog" aria-labelledby="blog-title">
+        <div class="as-container">
+          <header class="as-section__head">
+            <span class="as-callout" aria-hidden="true"><b>06</b><i>07</i></span>
+            <div>
+              <span class="as-label as-section__eyebrow">Sheet 06 / 07 — notes</span>
+              <h1 class="as-section__title" id="blog-title">Field notes</h1>
+              <p class="as-section__intro">Write-ups on infrastructure, automation and lessons from incidents.</p>
+            </div>
+          </header>
+          <div class="as-grid" id="post-grid"></div>
         </div>
       </section>
 
@@ -31,5 +28,6 @@
     </main>
 
     <!-- @include footer -->
+    <script type="module" src="/src/pages/blog.ts"></script>
   </body>
 </html>

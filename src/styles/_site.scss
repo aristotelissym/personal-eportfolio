@@ -1,0 +1,219 @@
+@use 'tokens' as *;
+
+// Site-specific pieces built from the system's tokens: things a multi-page site needs
+// that the single-page reference doesn't show (mobile menu, theme switch, filters, details).
+
+// ---------- Nav ----------
+.as-nav__brand {
+  min-width: 0;
+}
+
+.as-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: none;
+}
+
+.nav-cv {
+  min-height: 40px;
+  padding: var(--space-2) var(--space-3);
+  font-size: 12px;
+
+  @media (max-width: 640px) {
+    display: none;
+  }
+}
+
+.nav-menu {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  @media (max-width: $nav-collapse) {
+    display: inline-flex;
+  }
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: $nav-collapse) {
+  .as-nav__in {
+    position: relative;
+    gap: var(--space-3);
+  }
+
+  .as-nav__links.is-open {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    right: 0;
+    display: grid;
+    gap: 0;
+    padding: var(--space-2) var(--space-4) var(--space-4);
+    background: var(--surface);
+    border-bottom: 2px solid var(--ink);
+
+    a {
+      padding: var(--space-3) 0;
+      border-bottom: 1px solid var(--line);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .as-nav__word {
+    font-size: 13px;
+
+    small {
+      display: none;
+    }
+  }
+}
+
+// ---------- Hero ----------
+.as-hero__name {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .as-hero {
+    padding: var(--space-12) 0 var(--space-16);
+  }
+
+  .as-dim__a {
+    display: none;
+  }
+}
+
+// ---------- About ----------
+.about {
+  align-items: start;
+}
+
+.about__copy {
+  max-width: var(--measure);
+
+  p:first-child {
+    margin-top: 0;
+  }
+}
+
+.about__side {
+  display: grid;
+  gap: var(--space-6);
+}
+
+// ---------- Sheet index (home) ----------
+.sheet-index a {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  gap: var(--space-3);
+  align-items: baseline;
+  color: var(--ink);
+  text-decoration: none;
+
+  &:hover b {
+    color: var(--accent);
+  }
+}
+
+// ---------- Experience: earlier roles ----------
+.earlier {
+  margin-top: var(--space-12);
+
+  > summary {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: '+';
+      color: var(--accent);
+    }
+  }
+
+  &[open] > summary {
+    border-bottom: 1px solid var(--line-strong);
+
+    &::after {
+      content: '−';
+    }
+  }
+
+  .as-timeline {
+    margin: var(--space-6) var(--space-6) var(--space-6) var(--space-8);
+  }
+}
+
+.cv-row {
+  margin-top: var(--space-8);
+}
+
+// ---------- Projects ----------
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+button.as-tag {
+  cursor: pointer;
+
+  &[aria-pressed='true'] {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-color: var(--accent);
+
+    &::before {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+  }
+}
+
+.as-sheet__figure {
+  margin: 0;
+  border-bottom: 1px solid var(--line-strong);
+
+  img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+}
+
+.as-sheet__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+
+  a {
+    font-weight: 600;
+  }
+}
+
+// ---------- Contact ----------
+.as-contact a:focus-visible {
+  outline-color: var(--safety);
+}
+
+.sheet-index li > a {
+  flex: 1;
+}

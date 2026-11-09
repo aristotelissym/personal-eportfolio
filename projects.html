@@ -2,33 +2,30 @@
 <html lang="en">
   <head>
     <!-- @include head -->
-    <title>Projects · Aristotelis Symeonidis</title>
-    <meta
-      name="description"
-      content="Selected work by Aristotelis Symeonidis: Kubernetes platforms, cloud migrations and infrastructure automation."
-    />
-    <script type="module" src="/src/pages/projects.ts"></script>
+    <title>Projects — Aristotelis Symeonidis</title>
+    <meta name="description" content="Selected infrastructure and DevOps work by Aristotelis Symeonidis." />
   </head>
-  <body data-page="projects">
+  <body class="as-root" data-page="projects">
     <!-- @include header -->
 
     <main id="main">
-      <header class="page-header">
-        <div class="container">
-          <p class="eyebrow">05 — projects</p>
-          <h1 class="page-header__title">Selected work</h1>
-          <p class="page-header__lead">
-            Highlights from production. Case studies are on the way. Side projects and code live on
-            <a href="https://github.com/aristotelissym" target="_blank" rel="noopener">GitHub ↗</a>.
-          </p>
-        </div>
-      </header>
+      <!-- 05 Projects -->
+      <section class="as-section as-section--alt" id="projects" aria-labelledby="projects-title">
+        <div class="as-container">
+          <header class="as-section__head">
+            <span class="as-callout" aria-hidden="true"><b>05</b><i>07</i></span>
+            <div>
+              <span class="as-label as-section__eyebrow">Sheet 05 / 07 — projects</span>
+              <h1 class="as-section__title" id="projects-title">Selected work</h1>
+              <p class="as-section__intro">Highlights from production. Case studies are on the way.</p>
+            </div>
+          </header>
 
-      <section class="section section--tight" aria-label="Project list">
-        <div class="container">
-          <div class="filters" id="project-filters" role="group" aria-label="Filter projects by technology"></div>
-          <p class="filters__count muted" id="project-count" aria-live="polite"></p>
-          <div class="grid grid--3" id="project-grid"></div>
+          <div class="filters">
+            <div class="as-tags" id="project-filters" role="group" aria-label="Filter by tool"></div>
+            <p class="as-anno" id="project-count" aria-live="polite" style="margin: 0"></p>
+          </div>
+          <div class="as-grid" id="project-grid"></div>
         </div>
       </section>
 
@@ -36,5 +33,6 @@
     </main>
 
     <!-- @include footer -->
+    <script type="module" src="/src/pages/projects.ts"></script>
   </body>
 </html>

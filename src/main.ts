@@ -1,5 +1,4 @@
 // Shared entry: styles + behaviour common to every page.
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import './styles/main.scss';
 
 type Theme = 'light' | 'dark';
@@ -21,12 +20,11 @@ function activeTheme(): Theme {
 function initTheme(): void {
   const button = document.querySelector<HTMLButtonElement>('.theme-toggle');
   if (!button) return;
-  const icon = button.querySelector('i');
+  const NAMES: Record<Theme, string> = { light: 'drafting paper', dark: 'blueprint' };
 
   const sync = () => {
-    const next = activeTheme() === 'dark' ? 'light' : 'dark';
-    button.setAttribute('aria-label', `Switch to ${next} theme`);
-    if (icon) icon.className = `fa-solid ${next === 'light' ? 'fa-sun' : 'fa-moon'}`;
+    const next: Theme = activeTheme() === 'dark' ? 'light' : 'dark';
+    button.setAttribute('aria-label', `Switch to ${NAMES[next]} (${next}) theme`);
   };
 
   button.addEventListener('click', () => {
@@ -46,33 +44,32 @@ function initTheme(): void {
 
 function initNav(): void {
   const page = document.body.dataset.page;
-  document.querySelectorAll<HTMLAnchorElement>('.site-nav__link').forEach((link) => {
+  document.querySelectorAll<HTMLAnchorElement>('.as-nav__links a[data-page]').forEach((link) => {
     if (link.dataset.page === page) link.setAttribute('aria-current', 'page');
   });
 
-  const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
-  const nav = document.getElementById('site-nav');
-  if (!toggle || !nav) return;
-  const icon = toggle.querySelector('i');
+  const toggle = document.querySelector<HTMLButtonElement>('.nav-menu');
+  const links = document.getElementById('nav-links');
+  if (!toggle || !links) return;
 
   const setOpen = (open: boolean) => {
-    nav.classList.toggle('is-open', open);
+    links.classList.toggle('is-open', open);
     toggle.setAttribute('aria-expanded', String(open));
-    if (icon) icon.className = `fa-solid ${open ? 'fa-xmark' : 'fa-bars'}`;
+    toggle.textContent = open ? 'Close' : 'Menu';
   };
 
   toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+    if (event.key === 'Escape' && links.classList.contains('is-open')) {
       setOpen(false);
       toggle.focus();
     }
   });
-  // Close the menu after following an in-page link (e.g. ./contact).
-  nav.addEventListener('click', (event) => {
+  // Close the menu after following an in-page link (e.g. contact).
+  links.addEventListener('click', (event) => {
     if ((event.target as HTMLElement).closest('a')) setOpen(false);
   });
-  window.matchMedia('(min-width: 1024px)').addEventListener('change', (event) => {
+  window.matchMedia('(min-width: 901px)').addEventListener('change', (event) => {
     if (event.matches) setOpen(false);
   });
 }

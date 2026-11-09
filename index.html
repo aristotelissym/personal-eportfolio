@@ -2,133 +2,121 @@
 <html lang="en">
   <head>
     <!-- @include head -->
-    <title>Aristotelis Symeonidis · DevOps Engineer</title>
+    <title>Aristotelis Symeonidis — DevOps engineer</title>
     <meta
       name="description"
-      content="Aristotelis Symeonidis, DevOps engineer at T-Digital, Deutsche Telekom IT in Thessaloniki. Kubernetes platforms, cloud migrations and automation."
+      content="Aristotelis Symeonidis, DevOps engineer at T-Digital, Deutsche Telekom IT in Thessaloniki. Kubernetes, Terraform, GitLab CI/CD, AWS and Open Telekom Cloud."
     />
-    <script type="module" src="/src/pages/home.ts"></script>
   </head>
-  <body data-page="home">
+  <body class="as-root" data-page="home">
     <!-- @include header -->
 
     <main id="main">
-      <!-- Hero -->
-      <section class="hero">
-        <div class="container hero__grid">
+      <!-- 00 Cover sheet -->
+      <section class="as-hero as-gridbg" aria-labelledby="hero-title">
+        <div class="as-container as-hero__grid">
           <div>
-            <p class="eyebrow">// devops engineer · thessaloniki, greece</p>
-            <h1 class="hero__title">Aristotelis <span class="hl">Symeonidis</span></h1>
-            <p class="hero__lead">
-              I'm a <strong>DevOps engineer</strong> with <strong><span data-years-since="2020-10">6</span> years</strong>
-              in cloud operations. At T-Digital, Deutsche Telekom IT, I run Kubernetes platforms and move enterprise
-              systems to the cloud.
-            </p>
-            <div class="btn-row">
-              <a class="btn btn--primary" href="#contact">Let's talk</a>
-              <a class="btn btn--signal" href="./cv/Aristotelis-Symeonidis-CV.pdf" download>
-                <i class="fa-solid fa-download" aria-hidden="true"></i> Download CV <span class="btn__kbd">PDF</span>
-              </a>
-              <a class="btn" href="https://github.com/aristotelissym" target="_blank" rel="noopener">
-                <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub ↗
-              </a>
-              <a class="btn" href="https://www.linkedin.com/in/aristotelissym/" target="_blank" rel="noopener">
-                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn ↗
-              </a>
+            <span class="as-label as-section__eyebrow">As-built record · DevOps engineer</span>
+            <h1 class="as-hero__name" id="hero-title">Aristotelis Symeonidis</h1>
+            <div class="as-dim">
+              <span class="as-dim__a">2020</span><span class="as-dim__end"></span><span class="as-dim__rule"></span>
+              <span class="as-dim__v"><span data-years-since="2020-10">6</span> yrs in operations</span>
+              <span class="as-dim__rule"></span><span class="as-dim__end"></span><span class="as-dim__a" data-year>2026</span>
             </div>
-            <ul class="tag-list hero__creds" aria-label="Certifications">
-              <li class="tag">AWS Solutions Architect – Associate</li>
-              <li class="tag">GCP Cloud Digital Leader</li>
-              <li class="tag">CSPO</li>
-            </ul>
+            <p class="as-hero__lead">
+              I'm a <strong>DevOps engineer</strong> who builds and runs the infrastructure other teams ship on. At
+              <strong>T-Digital, Deutsche Telekom IT</strong>, I operate Kubernetes platforms and move enterprise systems
+              to the cloud.
+            </p>
+            <div class="as-hero__actions">
+              <a class="as-btn as-btn--primary" href="#contact">Let's talk</a>
+              <a class="as-btn as-btn--safety" href="./cv/Aristotelis-Symeonidis-CV.pdf" download>
+                Download CV <span class="as-btn__meta">PDF</span>
+              </a>
+              <a class="as-btn as-btn--ghost as-btn--icon" href="https://www.linkedin.com/in/aristotelissym/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+              <a class="as-btn as-btn--ghost as-btn--icon" href="https://github.com/aristotelissym" target="_blank" rel="noopener" aria-label="GitHub">gh</a>
+              <a class="as-btn as-btn--ghost as-btn--icon" href="mailto:arisymeon97@gmail.com" aria-label="Email">@</a>
+            </div>
           </div>
 
-          <div class="terminal">
-            <div class="terminal__bar" aria-hidden="true">
-              <span class="terminal__dot terminal__dot--red"></span>
-              <span class="terminal__dot terminal__dot--amber"></span>
-              <span class="terminal__dot terminal__dot--green"></span>
-              <span class="terminal__title">aristotelis@thessaloniki: ~</span>
+          <div class="as-hero__side">
+            <div class="as-term" role="img" aria-label="Terminal: whoami prints aristotelis-symeonidis, devops engineer. role.yaml lists T-Digital, Deutsche Telekom IT, the AWS / System Team of the Gigabit Domain, and a stack of Kubernetes, Rancher, Terraform, GitLab CI, AWS and OTC.">
+              <div class="as-term__bar"><span>aristotelis@thessaloniki:~</span><span>TTY 01</span></div>
+<pre class="as-term__body" aria-hidden="true"><span class="as-term__line" style="--i:0"><span class="as-term__p">$</span> whoami</span><span class="as-term__line" style="--i:1"><span class="as-term__out">aristotelis-symeonidis · devops engineer</span></span><span class="as-term__line" style="--i:2"><span class="as-term__p">$</span> cat role.yaml</span><span class="as-term__line" style="--i:3"><span class="as-term__key">company:</span> T-Digital, Deutsche Telekom IT</span><span class="as-term__line" style="--i:4"><span class="as-term__key">team:</span>    AWS / System Team, Gigabit Domain</span><span class="as-term__line" style="--i:5"><span class="as-term__key">stack:</span>   [kubernetes, rancher, terraform,</span><span class="as-term__line" style="--i:6">          gitlab-ci, aws, otc]</span><span class="as-term__line" style="--i:7"><span class="as-term__p">$</span> <span class="as-term__cursor"></span></span></pre>
             </div>
-            <div class="terminal__body" data-typewriter>
-              <p class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">whoami</span></p>
-              <p class="term-out term-out--hl">aristotelis-symeonidis · devops engineer</p>
-              <p class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">cat role.yaml</span></p>
-              <p class="term-out"><span class="term-key">company:</span> T-Digital, Deutsche Telekom IT</p>
-              <p class="term-out"><span class="term-key">team:</span>    AWS / System Team, Gigabit Domain</p>
-              <p class="term-out"><span class="term-key">stack:</span>   [kubernetes, rancher, terraform, gitlab-ci, aws, otc]</p>
-              <p class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">uptime</span></p>
-              <p class="term-out"><span data-years-since="2020-10">6</span> years in cloud operations</p>
-              <p class="term-line"><span class="term-prompt">$</span> <span class="term-cursor" aria-hidden="true"></span></p>
+            <div class="as-tb" aria-label="Drawing title block">
+              <div class="as-tb__cell as-tb__cell--wide"><span class="as-tb__k">Drawn by</span><span class="as-tb__v">A. Symeonidis</span></div>
+              <div class="as-tb__cell as-tb__cell--wide"><span class="as-tb__k">Site</span><span class="as-tb__v">Thessaloniki, GR</span></div>
+              <div class="as-tb__cell as-tb__cell--wide"><span class="as-tb__k">Certified</span><span class="as-tb__v">AWS SAA · GCP CDL · CSPO</span></div>
+              <div class="as-tb__cell"><span class="as-tb__k">Status</span><span class="as-lamp">Running</span></div>
+              <div class="as-tb__cell"><span class="as-tb__k">Rev</span><span class="as-tb__v">%REV%</span></div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- 01 whoami -->
-      <section class="section section--alt" id="about" aria-labelledby="about-title">
-        <div class="container">
-          <p class="eyebrow">01 — whoami</p>
-          <h2 class="section-title" id="about-title"><span class="hash">#</span> About me</h2>
-          <div class="about">
-            <div class="about__text">
+      <section class="as-section as-section--alt" id="about" aria-labelledby="about-title">
+        <div class="as-container">
+          <header class="as-section__head">
+            <span class="as-callout" aria-hidden="true"><b>01</b><i>07</i></span>
+            <div>
+              <span class="as-label as-section__eyebrow">Sheet 01 / 07 — whoami</span>
+              <h2 class="as-section__title" id="about-title">About me</h2>
+            </div>
+          </header>
+
+          <div class="as-grid as-grid--2 about">
+            <div class="about__copy">
               <p>
                 I keep production systems available, secure and cost-efficient. My path ran from technical lead for
-                production systems at Pfizer's Center for Digital Innovation, through IT operations at Deutsche Telekom
-                IT, to DevOps engineering on Kubernetes and the cloud.
+                production systems at Pfizer's Center for Digital Innovation, through IT operations at Deutsche Telekom IT,
+                to DevOps engineering on Kubernetes and the cloud.
               </p>
               <p>
                 I care about system architecture, cloud computing and IoT, and about the unglamorous parts: root-cause
-                analysis, automation that removes toil, and migrations that nobody notices.
+                analysis, automation that removes toil, and migrations nobody notices.
               </p>
-              <dl class="stats">
-                <div class="stat">
-                  <dt class="stat__label">years in cloud operations</dt>
-                  <dd class="stat__value"><span data-years-since="2020-10">6</span></dd>
+              <div class="as-reveal as-slot" style="min-height: 120px; margin-top: 24px">
+                <div class="as-slot__tape"></div>
+                <div class="as-slot__body">
+                  <span class="as-label"><b>Work in progress</b></span>Extended bio: what drives you, what you're
+                  learning, life outside work.
                 </div>
-                <div class="stat">
-                  <dt class="stat__label">certifications</dt>
-                  <dd class="stat__value" data-cert-count>4</dd>
-                </div>
-                <div class="stat">
-                  <dt class="stat__label">Smart Cities &amp; IoT, in progress</dt>
-                  <dd class="stat__value">M.Sc.</dd>
-                </div>
-              </dl>
-              <div class="slot slot--bio">
-                <b>+ Extend bio</b><span>What drives you, what you're learning now, life outside work.</span>
               </div>
             </div>
+
             <div class="about__side">
-              <div class="slot slot--photo"><b>+ Add photo</b><span>Square headshot, 480 × 480.</span></div>
-              <article class="card">
-                <h3 class="card__title card__title--flush">Fields of interest</h3>
-                <ul class="tag-list" id="interests"></ul>
-              </article>
-              <article class="card">
-                <h3 class="card__title card__title--flush">How I work</h3>
-                <ul class="tag-list" id="work-style"></ul>
-              </article>
+              <div class="as-reveal as-sheet">
+                <div class="as-sheet__strip as-label"><span>Fields of interest</span><span data-count="interests"></span></div>
+                <div class="as-sheet__body"><ul class="as-tags" id="interests"></ul></div>
+              </div>
+              <div class="as-reveal as-sheet">
+                <div class="as-sheet__strip as-label"><span>How I work</span><span data-count="work-style"></span></div>
+                <div class="as-sheet__body"><ul class="as-tags" id="work-style"></ul></div>
+              </div>
+              <div class="as-reveal as-slot" style="min-height: 140px">
+                <div class="as-slot__tape"></div>
+                <div class="as-slot__body"><span class="as-label"><b>Work in progress</b></span>Headshot, square, 480 × 480.</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Onward -->
-      <section class="section">
-        <div class="container">
-          <div class="cta">
-            <div>
-              <p class="eyebrow">$ git log --author="aristotelis" --oneline</p>
-              <h2 class="cta__title">Want the long version?</h2>
-              <p class="muted">
-                <span data-years-since="2020-10">6</span> years keeping production systems available, from pharma to
-                telecom.
-              </p>
-            </div>
-            <div class="btn-row">
-              <a class="btn" href="./experience.html">./experience <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-              <a class="btn" href="./projects.html">./projects <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <!-- Sheet index: the rest of the set lives on other pages -->
+      <section class="as-section" aria-labelledby="index-title">
+        <div class="as-container">
+          <div class="as-reveal as-sheet sheet-index">
+            <div class="as-sheet__strip as-label"><span id="index-title">Sheet index</span><span>07 sheets</span></div>
+            <div class="as-sheet__body" style="padding-top: 8px; padding-bottom: 8px">
+              <ul class="as-facts">
+                <li><a href="./experience.html"><span class="as-anno">02</span><b>Where I've worked</b><span class="as-anno">Experience →</span></a></li>
+                <li><a href="./experience.html#skills"><span class="as-anno">03</span><b>Toolbox</b><span class="as-anno">Rack →</span></a></li>
+                <li><a href="./experience.html#credentials"><span class="as-anno">04</span><b>Certificates &amp; education</b><span class="as-anno">Certs →</span></a></li>
+                <li><a href="./projects.html"><span class="as-anno">05</span><b>Selected work</b><span class="as-anno">Projects →</span></a></li>
+                <li><a href="./blog.html"><span class="as-anno">06</span><b>Field notes</b><span class="as-anno">Notes →</span></a></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -138,5 +126,6 @@
     </main>
 
     <!-- @include footer -->
+    <script type="module" src="/src/pages/home.ts"></script>
   </body>
 </html>

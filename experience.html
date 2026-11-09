@@ -2,60 +2,72 @@
 <html lang="en">
   <head>
     <!-- @include head -->
-    <title>Experience & skills · Aristotelis Symeonidis</title>
+    <title>Experience — Aristotelis Symeonidis</title>
     <meta
       name="description"
-      content="Work history, toolbox, certificates and education of Aristotelis Symeonidis, DevOps engineer."
+      content="Where Aristotelis Symeonidis has worked, the tools he uses, and his certificates and education."
     />
-    <script type="module" src="/src/pages/experience.ts"></script>
   </head>
-  <body data-page="experience">
+  <body class="as-root" data-page="experience">
     <!-- @include header -->
 
     <main id="main">
-      <header class="page-header">
-        <div class="container">
-          <p class="eyebrow">$ git log --author="aristotelis" --oneline</p>
-          <h1 class="page-header__title">Experience &amp; skills</h1>
-          <p class="page-header__lead">
-            <span data-years-since="2020-10">6</span> years keeping production systems available, from pharma to
-            telecom. Most recent commit first.
-          </p>
-          <a class="btn btn--signal" href="./cv/Aristotelis-Symeonidis-CV.pdf" download>
-            <i class="fa-solid fa-download" aria-hidden="true"></i> Download CV <span class="btn__kbd">PDF</span>
-          </a>
-        </div>
-      </header>
+      <!-- 02 Experience -->
+      <section class="as-section" id="experience" aria-labelledby="experience-title">
+        <div class="as-container">
+          <header class="as-section__head">
+            <span class="as-callout" aria-hidden="true"><b>02</b><i>07</i></span>
+            <div>
+              <span class="as-label as-section__eyebrow">Sheet 02 / 07 — experience</span>
+              <h1 class="as-section__title" id="experience-title">Where I've worked</h1>
+              <p class="as-section__intro">
+                <span data-years-since="2020-10">Six</span> years keeping production available, from pharma to telecom.
+              </p>
+            </div>
+          </header>
 
-      <section class="section section--tight" id="experience" aria-labelledby="timeline-title">
-        <div class="container">
-          <p class="eyebrow">02 — experience</p>
-          <h2 class="section-title" id="timeline-title"><span class="hash">#</span> Where I've worked</h2>
-          <ol class="gitlog" id="timeline"></ol>
-          <details class="earlier">
-            <summary class="earlier__summary">Earlier roles · QA, web development and research, 2016 – 2020</summary>
-            <ol class="gitlog gitlog--earlier" id="timeline-earlier"></ol>
+          <ol class="as-timeline" id="timeline"></ol>
+
+          <details class="as-sheet earlier">
+            <summary class="as-label">Earlier roles — QA &amp; development, 2016 – 2020</summary>
+            <ol class="as-timeline" id="timeline-earlier"></ol>
           </details>
+
+          <div class="as-hero__actions cv-row">
+            <a class="as-btn as-btn--safety" href="./cv/Aristotelis-Symeonidis-CV.pdf" download>
+              Download CV <span class="as-btn__meta">PDF</span>
+            </a>
+          </div>
         </div>
       </section>
 
-      <section class="section section--alt" id="skills" aria-labelledby="skills-title">
-        <div class="container">
-          <p class="eyebrow">03 — skills</p>
-          <h2 class="section-title" id="skills-title"><span class="hash">#</span> Toolbox</h2>
-          <p class="section-lead">What I reach for, grouped by layer of the stack.</p>
-          <div class="skill-groups" id="skills-grid"></div>
-          <h3 class="subsection-title">how I work</h3>
-          <ul class="tag-list" id="work-style"></ul>
+      <!-- 03 Rack -->
+      <section class="as-section as-section--alt" id="skills" aria-labelledby="skills-title">
+        <div class="as-container">
+          <header class="as-section__head">
+            <span class="as-callout" aria-hidden="true"><b>03</b><i>07</i></span>
+            <div>
+              <span class="as-label as-section__eyebrow">Sheet 03 / 07 — rack</span>
+              <h2 class="as-section__title" id="skills-title">Toolbox</h2>
+              <p class="as-section__intro">What I reach for, mounted by layer of the stack.</p>
+            </div>
+          </header>
+          <div class="as-rack" id="rack"></div>
         </div>
       </section>
 
-      <section class="section" id="credentials" aria-labelledby="credentials-title">
-        <div class="container">
-          <p class="eyebrow">04 — credentials</p>
-          <h2 class="section-title" id="credentials-title"><span class="hash">#</span> Certificates &amp; education</h2>
-          <div class="grid grid--4" id="certifications"></div>
-          <div class="grid grid--2 education-row" id="education"></div>
+      <!-- 04 Credentials -->
+      <section class="as-section" id="credentials" aria-labelledby="credentials-title">
+        <div class="as-container">
+          <header class="as-section__head">
+            <span class="as-callout" aria-hidden="true"><b>04</b><i>07</i></span>
+            <div>
+              <span class="as-label as-section__eyebrow">Sheet 04 / 07 — certs</span>
+              <h2 class="as-section__title" id="credentials-title">Certificates &amp; education</h2>
+            </div>
+          </header>
+          <div class="as-grid" id="certifications" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))"></div>
+          <div class="as-grid as-grid--2" id="education" style="margin-top: 32px"></div>
         </div>
       </section>
 
@@ -63,5 +75,6 @@
     </main>
 
     <!-- @include footer -->
+    <script type="module" src="/src/pages/experience.ts"></script>
   </body>
 </html>

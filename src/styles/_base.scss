@@ -1,7 +1,8 @@
 @use 'tokens' as *;
 
-// Theme: dark by default, follow the OS when no explicit choice, explicit choice wins.
+// Theme: Blueprint by default, follow the OS when there's no saved choice, a saved choice wins.
 :root {
+  @include constants;
   @include theme-dark;
 }
 
@@ -15,16 +16,10 @@
   @include theme-light;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: $header-height + 16px;
+  scroll-padding-top: $nav-height + 16px;
 }
 
 body {
@@ -32,16 +27,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg);
-  background-image:
-    linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: 32px 32px;
-  color: var(--text);
-  font-family: $font-sans;
-  font-size: 1rem;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
@@ -49,31 +34,11 @@ main {
   flex: 1;
 }
 
+// Headings inherit their colour, so they follow the ground (ink on paper, on-blueprint on panels).
 h1,
 h2,
-h3,
-h4 {
-  margin: 0 0 0.5em;
-  font-family: $font-mono;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: var(--heading);
+h3 {
   text-wrap: balance;
-}
-
-p {
-  margin: 0 0 1em;
-}
-
-a {
-  color: var(--accent);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-
-  &:hover {
-    color: var(--accent-strong);
-  }
 }
 
 img {
@@ -82,76 +47,42 @@ img {
   height: auto;
 }
 
-figure {
-  margin: 0;
-}
-
-ul,
-ol,
-dl,
-dd {
-  margin: 0;
-  padding: 0;
-}
-
 button {
   font: inherit;
 }
 
-:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
 ::selection {
-  background: var(--accent-fill);
-  color: var(--accent-contrast);
+  background: var(--safety);
+  color: var(--on-safety);
 }
 
-// ---------- Utilities ----------
-.muted {
-  color: var(--text-muted);
-}
-
-.accent {
-  color: var(--accent);
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .skip-link {
   position: absolute;
-  left: 1rem;
+  left: var(--space-4);
   top: -100px;
   z-index: 100;
-  padding: 0.5rem 1rem;
-  border-radius: $radius-sm;
-  background: var(--accent-fill);
-  color: var(--accent-contrast);
-  font-family: $font-mono;
-  text-decoration: none;
+  padding: var(--space-2) var(--space-4);
+  background: var(--safety);
+  color: var(--on-safety);
+  font-family: var(--font-mono);
+  font-weight: 600;
 
   &:focus {
-    top: 0.75rem;
-    color: var(--accent-contrast);
-  }
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
+    top: var(--space-3);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
   }
 }

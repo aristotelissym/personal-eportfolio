@@ -1,102 +1,99 @@
 import '../main';
 import { certifications, degrees, languages } from '../data/education';
 import { earlierRoles, roles, type Role } from '../data/experience';
-import { skillGroups, workStyle } from '../data/skills';
-import { shortHash } from '../lib/hash';
+import { skillGroups } from '../data/skills';
 import { html, mount } from '../lib/html';
+import { icon, tag, tagList } from '../lib/tags';
 
-const commit = (role: Role) => {
+const pad = (n: number) => String(n).padStart(2, '0');
+
+const stage = (role: Role) => {
   const current = role.end === null;
   return html`
-    <li class="commit${current ? ' commit--head' : ''}">
-      <p class="commit__meta">
-        <span class="commit__hash">commit ${shortHash(role.company + role.title + role.start)}</span>
-        ${current ? html`<span class="commit__ref">(HEAD -&gt; current)</span>` : null}
-        <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> ${role.start} – ${role.end ?? 'Present'}</span>
-        <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> ${role.location}</span>
-      </p>
-      <article class="card commit__card">
-        <div class="commit__head">
-          <div>
-            <h3 class="commit__title">${role.title}</h3>
-            <p class="commit__company">@ ${role.company}</p>
-          </div>
-          ${current ? html`<span class="status status--active">● Current</span>` : null}
+    <li class="as-reveal as-xp${current ? ' as-xp--current' : ''}">
+      <div class="as-xp__top">
+        <div>
+          <h3 class="as-xp__role">${role.title}</h3>
+          <p class="as-xp__org">${role.company}</p>
         </div>
-        <ul class="commit__highlights">
-          ${role.highlights.map((h) => html`<li>${h}</li>`)}
-        </ul>
-        ${role.tech.length > 0
-          ? html`<ul class="tag-list" aria-label="Tools">
-              ${role.tech.map((t) => html`<li class="tag">${t}</li>`)}
-            </ul>`
-          : null}
-      </article>
+        <div class="as-xp__when">
+          ${current ? html`<span class="as-lamp">Running</span>` : null}
+          <span class="as-anno">${role.start} – ${role.end ?? 'Present'} · ${role.location}</span>
+        </div>
+      </div>
+      <ul class="as-xp__list">
+        ${role.highlights.map((h) => html`<li>${h}</li>`)}
+      </ul>
+      ${tagList(role.tech, 'Tools')}
     </li>
   `;
 };
 
-mount('#timeline', html`${roles.map(commit)}`);
-mount('#timeline-earlier', html`${earlierRoles.map(commit)}`);
+mount('#timeline', html`${roles.map(stage)}`);
+mount('#timeline-earlier', html`${earlierRoles.map(stage)}`);
 
 mount(
-  '#skills-grid',
-  html`${skillGroups.map(
-    (group) => html`
-      <section class="card skill-group">
-        <h3 class="skill-group__title"><i class="${group.icon}" aria-hidden="true"></i> ${group.title}</h3>
-        <ul class="tag-list">
-          ${group.items.map((item) => html`<li class="tag tag--accent">${item}</li>`)}
-        </ul>
-      </section>
-    `,
-  )}`,
+  '#rack',
+  html`
+    <div class="as-rack__label as-label"><span>Rack A — toolbox</span><span>${skillGroups.length}U</span></div>
+    ${skillGroups.map(
+      (group, i) => html`
+        <div class="as-reveal as-unit">
+          <span class="as-unit__u as-label" style="--u:${i + 1}"
+            >U${pad(i + 1)}<span class="as-leds" aria-hidden="true"><i></i><i></i><i></i></span
+          ></span>
+          <h3 class="as-unit__name">${icon(group.icon, 'md')}${group.title}</h3>
+          <ul class="as-tags" aria-label="${group.title} tools">
+            ${group.items.map((item) => tag(item, group.patched?.includes(item) ?? false))}
+          </ul>
+        </div>
+      `,
+    )}
+  `,
 );
-
-mount('#work-style', html`${workStyle.map((item) => html`<li class="tag">${item}</li>`)}`);
 
 mount(
   '#certifications',
   html`${certifications.map(
     (cert) => html`
-      <article class="card cert">
-        <i class="cert__icon ${cert.icon}" aria-hidden="true"></i>
-        <h3 class="cert__name">${cert.name}</h3>
-        <p class="cert__meta">${cert.issuer} · ${cert.date}</p>
-        ${cert.credentialUrl
-          ? html`<a class="cert__link" href="${cert.credentialUrl}" target="_blank" rel="noopener">Verify ↗</a>`
-          : null}
+      <article class="as-reveal as-sheet as-plate">
+        <span class="as-plate__mono" aria-hidden="true">${cert.monogram}</span>
+        <div>
+          <h3 class="as-plate__title">${cert.name}</h3>
+          <p class="as-plate__by">${cert.issuer} · ${cert.date}</p>
+          ${cert.credentialUrl
+            ? html`<a class="as-plate__link" href="${cert.credentialUrl}" target="_blank" rel="noopener">Verify ↗</a>`
+            : null}
+        </div>
       </article>
     `,
   )}`,
 );
 
+const factsSheet = (title: string, count: number, items: ReturnType<typeof html>[]) => html`
+  <div class="as-reveal as-sheet">
+    <div class="as-sheet__strip as-label"><h3 class="as-label" style="margin:0">${title}</h3><span>${count}</span></div>
+    <div class="as-sheet__body" style="padding-top:8px;padding-bottom:8px"><ul class="as-facts">${items}</ul></div>
+  </div>
+`;
+
 mount(
   '#education',
   html`
-    <article class="card">
-      <h3 class="card__title card__title--flush">
-        <i class="fa-solid fa-graduation-cap accent" aria-hidden="true"></i> Education
-      </h3>
-      <ul class="facts">
-        ${degrees.map(
-          (d) => html`<li>
-            <div>
-              <b>${d.degree}</b>
-              <span class="muted">${d.school}${d.detail ? ` · ${d.detail}` : ''}</span>
-            </div>
-            ${d.ongoing
-              ? html`<span class="status status--active">● Ongoing</span>`
-              : html`<span class="facts__aside">${d.period ?? ''}</span>`}
-          </li>`,
-        )}
-      </ul>
-    </article>
-    <article class="card">
-      <h3 class="card__title card__title--flush"><i class="fa-solid fa-language accent" aria-hidden="true"></i> Languages</h3>
-      <ul class="facts">
-        ${languages.map((lang) => html`<li><b>${lang.name}</b><span class="facts__aside">${lang.level}</span></li>`)}
-      </ul>
-    </article>
+    ${factsSheet(
+      'Education',
+      degrees.length,
+      degrees.map(
+        (d) => html`<li>
+          <div><b>${d.degree}</b><small>${d.school}${d.detail ? ` · ${d.detail}` : ''}</small></div>
+          ${d.ongoing ? html`<span class="as-lamp">Ongoing</span>` : html`<span class="as-anno">${d.period ?? ''}</span>`}
+        </li>`,
+      ),
+    )}
+    ${factsSheet(
+      'Languages',
+      languages.length,
+      languages.map((lang) => html`<li><b>${lang.name}</b><span class="as-anno">${lang.level}</span></li>`),
+    )}
   `,
 );

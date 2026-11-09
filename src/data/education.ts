@@ -2,7 +2,8 @@ export interface Certification {
   name: string;
   issuer: string;
   date: string;
-  icon: string;
+  /** 2–3 letters on the nameplate tile; never a vendor logo. */
+  monogram: string;
   /** Public credential URL. Leave out rather than pointing at "#". */
   credentialUrl?: string;
 }
@@ -12,25 +13,25 @@ export const certifications: Certification[] = [
     name: 'Solutions Architect – Associate',
     issuer: 'Amazon Web Services',
     date: 'Apr 2023',
-    icon: 'fa-brands fa-aws',
+    monogram: 'AWS',
   },
   {
     name: 'Cloud Digital Leader',
     issuer: 'Google Cloud',
     date: 'Nov 2023',
-    icon: 'fa-brands fa-google',
+    monogram: 'GCP',
   },
   {
     name: 'Certified Scrum Product Owner',
     issuer: 'Scrum Alliance',
     date: 'Nov 2022',
-    icon: 'fa-solid fa-people-group',
+    monogram: 'PO',
   },
   {
     name: 'DevOps School',
     issuer: 'Deutsche Telekom IT',
     date: 'Dec 2024',
-    icon: 'fa-solid fa-infinity',
+    monogram: 'DT',
   },
 ];
 

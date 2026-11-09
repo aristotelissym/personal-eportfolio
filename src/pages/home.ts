@@ -1,14 +1,14 @@
 import '../main';
-import { certifications } from '../data/education';
 import { interests, workStyle } from '../data/skills';
 import { html, mount } from '../lib/html';
-import { typewriter } from '../lib/typewriter';
 
-mount('#interests', html`${interests.map((item) => html`<li class="tag tag--accent">${item}</li>`)}`);
-mount('#work-style', html`${workStyle.map((item) => html`<li class="tag">${item}</li>`)}`);
+const lists: Record<string, { items: string[]; tagClass: string }> = {
+  interests: { items: interests, tagClass: 'as-tag as-tag--patched' },
+  'work-style': { items: workStyle, tagClass: 'as-tag as-tag--plain' },
+};
 
-const certCount = document.querySelector<HTMLElement>('[data-cert-count]');
-if (certCount) certCount.textContent = String(certifications.length);
-
-const terminal = document.querySelector<HTMLElement>('[data-typewriter]');
-if (terminal) void typewriter(terminal);
+for (const [id, { items, tagClass }] of Object.entries(lists)) {
+  mount(`#${id}`, html`${items.map((item) => html`<li class="${tagClass}">${item}</li>`)}`);
+  const count = document.querySelector(`[data-count="${id}"]`);
+  if (count) count.textContent = String(items.length);
+}

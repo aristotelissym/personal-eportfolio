@@ -1,62 +1,90 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Portfolio projects",
-  "description": "Cards shown on projects.html, in this order.",
+  "description": "Drawing sheets shown on projects.html, in this order. Sheets are numbered DWG P-01, P-02… by position.",
   "type": "object",
-  "required": ["projects"],
+  "required": [
+    "projects"
+  ],
   "additionalProperties": false,
   "properties": {
-    "$schema": { "type": "string" },
+    "$schema": {
+      "type": "string"
+    },
     "projects": {
       "type": "array",
-      "items": { "$ref": "#/definitions/project" }
+      "items": {
+        "$ref": "#/definitions/project"
+      }
     },
     "slots": {
-      "description": "Dashed placeholders shown after the projects (only when no tag filter is active). Remove once the content exists.",
+      "description": "Hazard-taped \"work in progress\" slots shown after the projects (only when no tag filter is active). One line each saying what belongs there; remove once the content exists.",
       "type": "array",
       "items": {
-        "type": "object",
-        "required": ["action"],
-        "additionalProperties": false,
-        "properties": {
-          "action": { "type": "string", "description": "Mono label, e.g. \"+ Add project\"." },
-          "hint": { "type": "string", "description": "One line saying what belongs there." }
-        }
+        "type": "string"
       }
     }
   },
   "definitions": {
     "project": {
       "type": "object",
-      "required": ["kind", "title", "summary", "tags", "period"],
+      "required": [
+        "kind",
+        "title",
+        "summary",
+        "tags",
+        "period"
+      ],
       "additionalProperties": false,
       "properties": {
         "kind": {
           "type": "string",
-          "description": "Label above the title, e.g. \"Work · Deutsche Telekom IT\" or \"Side project\"."
+          "description": "Context in the sheet strip, e.g. \"Work · DT IT\" or \"Side project\"."
         },
-        "title": { "type": "string" },
+        "title": {
+          "type": "string"
+        },
         "summary": {
           "type": "string",
           "description": "Problem → what you did, two sentences max. Work projects: role and outcome only."
         },
         "tags": {
           "type": "array",
-          "items": { "type": "string" },
-          "description": "Tools; also used for the filter chips."
+          "items": {
+            "type": "string"
+          },
+          "description": "Tools, in order of use. Known tools get an icon; AWS, Azure, GCP and OTC show as patched tags. Also used for the filter."
         },
-        "period": { "type": "string", "description": "e.g. \"2025 –\" or \"2023 – 2025\"." },
+        "period": {
+          "type": "string",
+          "description": "Shown in the sheet foot after the revision, e.g. \"2025 –\" or \"2023 – 2025\"."
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^[A-Z]$",
+          "description": "Drawing revision letter, bumped when the project changes substantially. Defaults to \"A\"."
+        },
         "repository": {
           "type": "string",
           "format": "uri",
           "description": "Source repository URL. github.com and gitlab.com are detected automatically."
         },
         "repositoryHost": {
-          "enum": ["github", "gitlab"],
+          "enum": [
+            "github",
+            "gitlab"
+          ],
           "description": "Only needed for self-hosted instances, e.g. gitlab.example.com."
         },
-        "liveUrl": { "type": "string", "format": "uri", "description": "Deployed site or demo." },
-        "caseStudyUrl": { "type": "string", "description": "Write-up link. Without any link the card says \"Case study soon\"." },
+        "liveUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Deployed site or demo."
+        },
+        "caseStudyUrl": {
+          "type": "string",
+          "description": "Write-up link. Without any link the card says \"Case study soon\"."
+        },
         "image": {
           "type": "string",
           "description": "Screenshot path relative to public/, e.g. \"projects/portfolio.png\". Side projects only."

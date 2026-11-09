@@ -11,6 +11,3 @@ export interface Post {
 
 /** Newest first. Until there are three, empty slots keep the grid full. */
 export const posts: Post[] = [];
-
-export const firstPostSlot = { action: '+ First post', hint: 'Title, date, one-line excerpt.' };
-export const nextPostSlot = { action: '+ Post', hint: 'Infrastructure, automation or an incident lesson.' };

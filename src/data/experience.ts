@@ -25,7 +25,7 @@ export const roles: Role[] = [
       'Orchestrate and administer Kubernetes clusters; analyse performance and ship corrective automation for availability and sustainability.',
       'Migrate enterprise solutions from on-prem to AWS.',
     ],
-    tech: ['Kubernetes', 'Rancher', 'Docker', 'Terraform', 'Scalr', 'GitLab CI/CD', 'Bash'],
+    tech: ['OTC', 'AWS', 'Kubernetes', 'Rancher', 'Docker', 'Terraform', 'Scalr', 'GitLab CI/CD', 'Bash'],
   },
   {
     title: 'IT Services & Operations Manager',
